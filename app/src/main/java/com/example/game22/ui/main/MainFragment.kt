@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import com.example.game22.Navigation
 import com.example.game22.Quest
 import com.example.game22.R
 
@@ -39,18 +40,7 @@ class MainFragment : Fragment() {
 
         val buttonQuestion = requireView().findViewById<Button>(R.id.buttonStart)
         buttonQuestion.setOnClickListener {
-            parentFragmentManager
-                .beginTransaction()
-                .replace(R.id.container, QuestionFragment.newInstance())
-                .commit()
-        }
-
-        val buttonMarmot = requireView().findViewById<Button>(R.id.buttonMarmot)
-        buttonMarmot.setOnClickListener {
-            parentFragmentManager
-                .beginTransaction()
-                .replace(R.id.container, ImageFragment.newInstance())
-                .commit()
+            Navigation.question(parentFragmentManager, Quest.startQuestion)
         }
     }
 
