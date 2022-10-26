@@ -47,16 +47,6 @@ class QuestionFragment : Fragment() {
             initButton(button = button, answer = question.answers[i])
         }
 
-//        ObjectAnimator
-//            .ofFloat(
-//                textQuestion,
-//                "alpha",
-//                0F,
-//            )
-//            .setDuration(2_000)
-//            .start()
-
-
         val buttonBack = requireView().findViewById<Button>(R.id.buttonBackQuestion)
         buttonBack.setOnClickListener {
             Navigation.main(parentFragmentManager)
@@ -78,7 +68,7 @@ class QuestionFragment : Fragment() {
 
     private fun processAnswer(answer: Answer) {
         if (answer.questionId == null) {
-            Navigation.fail(parentFragmentManager)
+            Navigation.fail(parentFragmentManager, answer.title)
 
             return
         }
