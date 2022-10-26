@@ -78,7 +78,7 @@ class QuestionFragment : Fragment() {
 
     private fun processAnswer(answer: Answer) {
         if (answer.questionId == null) {
-            Navigation.main(parentFragmentManager)
+            Navigation.fail(parentFragmentManager)
 
             return
         }
