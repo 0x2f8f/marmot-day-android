@@ -39,11 +39,11 @@ class QuestionFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val questionId = requireArguments().getInt("QUESTION_ID")
-        val question = Quest.questions.first{ question -> question.id == questionId }
+        val question = Quest.questions.first { question -> question.id == questionId }
 
         binding.textQuestion.text = question.title
 
-        listOf(binding.answer1, binding.answer2, binding.answer3).forEachIndexed{ i, button ->
+        listOf(binding.answer1, binding.answer2, binding.answer3).forEachIndexed { i, button ->
             initButton(button = button, answer = question.answers[i])
         }
 
@@ -63,12 +63,16 @@ class QuestionFragment : Fragment() {
 
     private fun initButton(button: Button, answer: Answer) {
         button.text = answer.title
-        button.setOnClickListener { processAnswer(answer)}
+        button.setOnClickListener { processAnswer(answer) }
     }
 
     private fun processAnswer(answer: Answer) {
         if (answer.questionId == null) {
-            Navigation.fail(parentFragmentManager, answer.title)
+            Navigation.fail(
+                parentFragmentManager,
+                answer.title,
+                requireArguments().getInt("QUESTION_ID")
+            )
 
             return
         }

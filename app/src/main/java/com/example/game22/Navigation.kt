@@ -25,10 +25,10 @@ object Navigation {
         args = QuestionFragment.bundle(questionId = questionId)
     )
 
-    fun fail(fragmentManager: FragmentManager, answerTitle: String) = replace(
+    fun fail(fragmentManager: FragmentManager, answerTitle: String, questionId: Int) = replace(
         fragmentManager = fragmentManager,
         fragmentClass = FailFragment::class.java,
-        args = FailFragment.bundle(answerTitle = answerTitle)
+        args = FailFragment.bundle(answerTitle = answerTitle, questionId = questionId)
     )
 
     private fun replace(
