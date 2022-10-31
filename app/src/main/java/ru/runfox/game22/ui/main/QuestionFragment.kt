@@ -1,4 +1,4 @@
-package com.example.game22.ui.main
+package ru.runfox.game22.ui.main
 
 //import android.animation.ObjectAnimator
 import android.os.Bundle
@@ -7,11 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import com.example.game22.Answer
-import com.example.game22.Navigation
-import com.example.game22.Quest
-import com.example.game22.R
-import com.example.game22.databinding.FragmentQuestionBinding
+import ru.runfox.game22.Answer
+import ru.runfox.game22.Navigation
+import ru.runfox.game22.Quest
+import ru.runfox.game22.databinding.FragmentQuestionBinding
 import com.google.android.material.snackbar.Snackbar
 
 class QuestionFragment : Fragment() {
@@ -42,14 +41,15 @@ class QuestionFragment : Fragment() {
         val question = Quest.questions.first { question -> question.id == questionId }
 
         binding.textQuestion.text = question.title
+        binding.textReward.text = "Вопрос ${question.id} на \$${String.format("%,d", question.reward)}"
 
-        listOf(binding.answer1, binding.answer2, binding.answer3).forEachIndexed { i, button ->
+        listOf(
+            binding.answer1,
+            binding.answer2,
+            binding.answer3,
+            binding.answer4
+        ).forEachIndexed { i, button ->
             initButton(button = button, answer = question.answers[i])
-        }
-
-        val buttonBack = requireView().findViewById<Button>(R.id.buttonBackQuestion)
-        buttonBack.setOnClickListener {
-            Navigation.main(parentFragmentManager)
         }
 
         binding.buttonHint.setOnClickListener {

@@ -1,4 +1,4 @@
-package com.example.game22.ui.main
+package ru.runfox.game22.ui.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import com.example.game22.Navigation
-import com.example.game22.R
+import ru.runfox.game22.Navigation
+import ru.runfox.game22.R
 
 class FinishFragment : Fragment() {
 

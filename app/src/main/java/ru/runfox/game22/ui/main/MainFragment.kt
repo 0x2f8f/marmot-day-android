@@ -1,4 +1,4 @@
-package com.example.game22.ui.main
+package ru.runfox.game22.ui.main
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -8,15 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import com.example.game22.Navigation
-import com.example.game22.Quest
-import com.example.game22.R
+import ru.runfox.game22.Navigation
+import ru.runfox.game22.Quest
+import ru.runfox.game22.R
 
 class MainFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = MainFragment()
-    }
 
     private lateinit var viewModel: MainViewModel
 
@@ -35,7 +31,7 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val mainMessage = requireView().findViewById<TextView>(R.id.mainMessage)
+        val mainMessage = requireView().findViewById<TextView>(R.id.gameTitle)
         mainMessage.text = Quest.title
 
         val buttonQuestion = requireView().findViewById<Button>(R.id.buttonStart)

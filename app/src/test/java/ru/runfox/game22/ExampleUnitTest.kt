@@ -1,4 +1,4 @@
-package com.example.game22
+package ru.runfox.game22
 
 import org.junit.Test
 

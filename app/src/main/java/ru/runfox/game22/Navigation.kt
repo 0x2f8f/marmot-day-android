@@ -1,12 +1,12 @@
-package com.example.game22
+package ru.runfox.game22
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import com.example.game22.ui.main.FailFragment
-import com.example.game22.ui.main.FinishFragment
-import com.example.game22.ui.main.MainFragment
-import com.example.game22.ui.main.QuestionFragment
+import ru.runfox.game22.ui.main.FailFragment
+import ru.runfox.game22.ui.main.FinishFragment
+import ru.runfox.game22.ui.main.MainFragment
+import ru.runfox.game22.ui.main.QuestionFragment
 
 object Navigation {
     fun main(fragmentManager: FragmentManager) = replace(

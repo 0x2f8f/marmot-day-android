@@ -3,15 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="24dp">
 
     <Button
         android:id="@+id/buttonRestart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#684F4F"
+        android:layout_width="0dp"
+        android:layout_height="51dp"
+        android:background="@color/design_default_color_primary"
         android:shadowColor="#7E78DC62"
         android:text="Начать заново"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,8 +36,8 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="377dp"
-        android:layout_height="425dp"
+        android:layout_width="352dp"
+        android:layout_height="398dp"
         app:layout_constraintBottom_toBottomOf="@+id/buttonRestart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.416"
