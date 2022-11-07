@@ -18,7 +18,7 @@
         android:gravity="start"
         android:text="@string/textQuestion"
         android:textAllCaps="false"
-        android:textColor="#000000"
+        android:textColor="@color/text_question"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/answer1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +42,7 @@
 
     <Button
         android:id="@+id/answer1"
-        android:layout_width="360dp"
+        android:layout_width="0dp"
         android:layout_height="48dp"
         android:background="@drawable/button_answer"
         android:text="@string/answer1"
@@ -55,7 +55,7 @@
 
     <Button
         android:id="@+id/answer2"
-        android:layout_width="360dp"
+        android:layout_width="0dp"
         android:layout_height="48dp"
         android:background="@drawable/button_answer"
         android:text="@string/answer2"
@@ -68,7 +68,7 @@
 
     <Button
         android:id="@+id/answer3"
-        android:layout_width="360dp"
+        android:layout_width="0dp"
         android:layout_height="48dp"
         android:background="@drawable/button_answer"
         android:text="@string/answer3"
@@ -81,7 +81,7 @@
 
     <Button
         android:id="@+id/answer4"
-        android:layout_width="360dp"
+        android:layout_width="0dp"
         android:layout_height="48dp"
         android:background="@drawable/button_answer"
         android:text="@string/answer4"
@@ -94,11 +94,12 @@
 
     <Button
         android:id="@+id/buttonHint"
-        android:layout_width="139dp"
-        android:layout_height="45dp"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
         android:shadowColor="#939292"
+        android:background="@drawable/button_hint"
         android:text="@string/buttonHint"
-        android:textColor="@color/design_default_color_on_secondary"
+        android:textColor="@color/text_hint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.937"

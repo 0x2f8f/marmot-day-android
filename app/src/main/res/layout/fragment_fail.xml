@@ -9,9 +9,12 @@
 
     <Button
         android:id="@+id/buttonHelpHint"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/buttonHelpHint"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
+        android:background="@drawable/button_hint"
+        android:shadowColor="#939292"
+        android:text="@string/buttonHint"
+        android:textColor="@color/text_hint"
         app:layout_constraintBottom_toTopOf="@+id/buttonRestartByFail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -58,19 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewFailSubTitle"
         app:layout_constraintVertical_bias="0.037" />
 
-    <Button
-        android:id="@+id/buttonRestartByFail"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/design_default_color_primary"
-        android:text="@string/buttonRestartByFail"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.910" />
+
 
     <TextView
         android:id="@+id/textViewHelpHint"
@@ -85,11 +76,25 @@
         app:layout_constraintVertical_bias="0.300" />
 
     <Button
+        android:id="@+id/buttonRestartByFail"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@drawable/button_start"
+        android:text="@string/buttonRestartByFail"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.910" />
+
+    <Button
         android:id="@+id/buttonRetry"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginBottom="8dp"
-        android:background="?attr/colorAccent"
+        android:background="@drawable/button_retry"
         android:text="@string/buttonRetry"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/buttonRestartByFail"

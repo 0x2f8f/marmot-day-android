@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Кто хочет стать \nсупер миллионером?</string>
+    <string name="app_name">Кто хочет стать \nсупер-миллионером?</string>
     <string name="buttonHelpHint">Подсказка</string>
     <string name="textViewHelpHint">Попробуйте воспользоваться подсказкой:</string>
     <string name="textViewFailTitle">Неверно</string>
@@ -7,9 +7,9 @@
     <string name="selectedAnswer">SelectedAnswer</string>
     <string name="buttonRestartByFail">Начать заново</string>
     <string name="buttonRetry">Попытаться ответить ещё раз</string>
-    <string name="gameTitle">Кто хочет стать \nсупер миллионером?</string>
+    <string name="gameTitle">Кто хочет стать \nсупер-миллионером?</string>
     <string name="buttonStart">Играть</string>
-    <string name="imageViewMain">Who want to be a millionaire</string>
+    <string name="imageViewMain">Who want to be a super millionaire</string>
     <string name="answer1">Answer 1</string>
     <string name="answer2">Answer 2</string>
     <string name="answer3">Answer 3</string>
@@ -17,4 +17,6 @@
     <string name="textReward">Text reward</string>
     <string name="textQuestion">Text question</string>
     <string name="buttonHint">Подсказка</string>
+    <string name="buttonRestart">Начать заново</string>
+    <string name="win">Победа!</string>
 </resources>

@@ -102,6 +102,9 @@ class QuestionFragment : Fragment() {
 
         button.setBackgroundResource(R.drawable.button_answer_success)
 
-        Navigation.question(parentFragmentManager, answer.questionId)
+        Handler(Looper.getMainLooper()).postDelayed({
+            Navigation.question(parentFragmentManager, answer.questionId)
+        }, 1000)
+
     }
 }
