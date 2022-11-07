@@ -1,8 +1,6 @@
 package ru.runfox.game22
 
 object Quest {
-    const val title = "Кто хочет стать миллионером?"
-
     val startQuestion = 1
     val finish = -1
     val questions: List<Question> = listOf(

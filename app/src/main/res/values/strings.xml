@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">game22</string>
+    <string name="app_name">Кто хочет стать \nсупер миллионером?</string>
     <string name="buttonHelpHint">Подсказка</string>
     <string name="textViewHelpHint">Попробуйте воспользоваться подсказкой:</string>
     <string name="textViewFailTitle">Неверно</string>
@@ -7,7 +7,7 @@
     <string name="selectedAnswer">SelectedAnswer</string>
     <string name="buttonRestartByFail">Начать заново</string>
     <string name="buttonRetry">Попытаться ответить ещё раз</string>
-    <string name="gameTitle">Кто хочет стать миллионером?</string>
+    <string name="gameTitle">Кто хочет стать \nсупер миллионером?</string>
     <string name="buttonStart">Играть</string>
     <string name="imageViewMain">Who want to be a millionaire</string>
     <string name="answer1">Answer 1</string>

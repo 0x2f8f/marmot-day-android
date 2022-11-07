@@ -31,8 +31,8 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val mainMessage = requireView().findViewById<TextView>(R.id.gameTitle)
-        mainMessage.text = Quest.title
+//        val mainMessage = requireView().findViewById<TextView>(R.id.gameTitle)
+//        mainMessage.text = Quest.title
 
         val buttonQuestion = requireView().findViewById<Button>(R.id.buttonStart)
         buttonQuestion.setOnClickListener {

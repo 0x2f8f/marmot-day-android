@@ -1,20 +1,23 @@
 package ru.runfox.game22.ui.main
 
-//import android.animation.ObjectAnimator
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import com.google.android.material.snackbar.Snackbar
 import ru.runfox.game22.Answer
 import ru.runfox.game22.Navigation
 import ru.runfox.game22.Quest
+import ru.runfox.game22.R
 import ru.runfox.game22.databinding.FragmentQuestionBinding
-import com.google.android.material.snackbar.Snackbar
 
 class QuestionFragment : Fragment() {
     lateinit var binding: FragmentQuestionBinding
+    var buttonPressed: Boolean = false
 
     companion object {
         fun bundle(questionId: Int): Bundle {
@@ -41,7 +44,8 @@ class QuestionFragment : Fragment() {
         val question = Quest.questions.first { question -> question.id == questionId }
 
         binding.textQuestion.text = question.title
-        binding.textReward.text = "Вопрос ${question.id} на \$${String.format("%,d", question.reward)}"
+        binding.textReward.text =
+            "Вопрос ${question.id} на \$${String.format("%,d", question.reward)}"
 
         listOf(
             binding.answer1,
@@ -63,16 +67,29 @@ class QuestionFragment : Fragment() {
 
     private fun initButton(button: Button, answer: Answer) {
         button.text = answer.title
-        button.setOnClickListener { processAnswer(answer) }
+        button.setOnClickListener {
+            if (!buttonPressed) {
+                buttonPressed = true
+                button.isEnabled = false
+                button.isSelected = true
+                Handler(Looper.getMainLooper()).postDelayed({
+                    processAnswer(answer, button)
+                }, 1000)
+            }
+        }
     }
 
-    private fun processAnswer(answer: Answer) {
+    private fun processAnswer(answer: Answer, button: Button) {
         if (answer.questionId == null) {
-            Navigation.fail(
-                parentFragmentManager,
-                answer.title,
-                requireArguments().getInt("QUESTION_ID")
-            )
+            button.setBackgroundResource(R.drawable.button_answer_wrong)
+
+            Handler(Looper.getMainLooper()).postDelayed({
+                Navigation.fail(
+                    parentFragmentManager,
+                    answer.title,
+                    requireArguments().getInt("QUESTION_ID")
+                )
+            }, 1000)
 
             return
         }
@@ -82,6 +99,8 @@ class QuestionFragment : Fragment() {
 
             return
         }
+
+        button.setBackgroundResource(R.drawable.button_answer_success)
 
         Navigation.question(parentFragmentManager, answer.questionId)
     }

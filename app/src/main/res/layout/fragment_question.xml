@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
+    android:orientation="vertical"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="58dp">
 
@@ -40,36 +41,10 @@
         app:layout_constraintVertical_bias="0.726" />
 
     <Button
-        android:id="@+id/answer4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/design_default_color_primary"
-        android:text="@string/answer3"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.900" />
-
-    <Button
-        android:id="@+id/answer2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/design_default_color_primary"
-        android:text="@string/answer2"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.720" />
-
-    <Button
         android:id="@+id/answer1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/design_default_color_primary"
+        android:layout_width="360dp"
+        android:layout_height="48dp"
+        android:background="@drawable/button_answer"
         android:text="@string/answer1"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -79,10 +54,23 @@
         app:layout_constraintVertical_bias="0.630" />
 
     <Button
+        android:id="@+id/answer2"
+        android:layout_width="360dp"
+        android:layout_height="48dp"
+        android:background="@drawable/button_answer"
+        android:text="@string/answer2"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.720" />
+
+    <Button
         android:id="@+id/answer3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/design_default_color_primary"
+        android:layout_width="360dp"
+        android:layout_height="48dp"
+        android:background="@drawable/button_answer"
         android:text="@string/answer3"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -90,6 +78,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.810" />
+
+    <Button
+        android:id="@+id/answer4"
+        android:layout_width="360dp"
+        android:layout_height="48dp"
+        android:background="@drawable/button_answer"
+        android:text="@string/answer4"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.900" />
 
     <Button
         android:id="@+id/buttonHint"
