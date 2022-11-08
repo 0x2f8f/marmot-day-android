@@ -9,6 +9,11 @@
     <string name="buttonRetry">Попытаться ответить ещё раз</string>
     <string name="gameTitle">Кто хочет стать \nсупер-миллионером?</string>
     <string name="buttonStart">Играть</string>
+    <string name="buttonFifty">Fifty fifty</string>
+    <string name="buttonHallHelp">Hall help</string>
+    <string name="buttonFiftyHelp">Fifty fifty</string>
+    <string name="buttonCallHelp">Call help</string>
+    <string name="buttonChanceHelp">Это ваш спасательный круг, если вы ответите неверно</string>
     <string name="imageViewMain">Who want to be a super millionaire</string>
     <string name="answer1">Answer 1</string>
     <string name="answer2">Answer 2</string>

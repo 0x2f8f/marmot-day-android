@@ -56,10 +56,10 @@ class QuestionFragment : Fragment() {
             initButton(button = button, answer = question.answers[i])
         }
 
-        binding.buttonHint.setOnClickListener {
+        binding.chanceHelpButton.setOnClickListener {
             Snackbar.make(
                 binding.root,
-                question.hint,
+                binding.chanceHelpButton.contentDescription,
                 Snackbar.LENGTH_LONG,
             ).show()
         }

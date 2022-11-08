@@ -92,20 +92,61 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.900" />
 
-    <Button
-        android:id="@+id/buttonHint"
-        android:layout_width="140dp"
-        android:layout_height="48dp"
-        android:shadowColor="#939292"
-        android:background="@drawable/button_hint"
-        android:text="@string/buttonHint"
-        android:textColor="@color/text_hint"
+    <ImageButton
+        android:id="@+id/hallHelpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_help"
+        android:contentDescription="@string/buttonHallHelp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
-        app:strokeColor="#9A9797" />
+        app:layout_constraintVertical_bias="0.020"
+        app:srcCompat="@drawable/help_people"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/fiftyHelpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_help"
+        android:contentDescription="@string/buttonFiftyHelp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.020"
+        app:srcCompat="@drawable/help_fifty_small" />
+
+    <ImageButton
+        android:id="@+id/callHelpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_help"
+        android:contentDescription="@string/buttonCallHelp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.020"
+        app:srcCompat="@drawable/help_call" />
+
+    <ImageButton
+        android:id="@+id/chanceHelpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_help"
+        android:contentDescription="@string/buttonChanceHelp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.020"
+        app:srcCompat="@drawable/help_chance" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
