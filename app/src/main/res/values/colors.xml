@@ -7,8 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="text_title">#2F54BF</color>
-    <color name="text_question">#FF000000</color>
+    <color name="text_title">#FFFFFFFF</color>
+    <color name="text_question">#FFFFFF</color>
     <color name="text_hint">#FFFFFF</color>
-    <color name="text_win">#FF000000</color>
+    <color name="text_win">#FFFFFF</color>
+    <color name="text_reward">#E68457</color>
 </resources>

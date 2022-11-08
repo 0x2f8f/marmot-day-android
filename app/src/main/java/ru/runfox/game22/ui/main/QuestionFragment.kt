@@ -95,7 +95,10 @@ class QuestionFragment : Fragment() {
         }
 
         if (answer.questionId == -1) {
-            Navigation.finish(parentFragmentManager)
+            button.setBackgroundResource(R.drawable.button_answer_success)
+            Handler(Looper.getMainLooper()).postDelayed({
+                Navigation.finish(parentFragmentManager)
+            }, 1000)
 
             return
         }

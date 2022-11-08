@@ -20,8 +20,8 @@
     <string name="answer3">Answer 3</string>
     <string name="answer4">Answer 4</string>
     <string name="textReward">Text reward</string>
-    <string name="textQuestion">Text question</string>
+    <string name="textQuestion">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
     <string name="buttonHint">Подсказка</string>
-    <string name="buttonRestart">Начать заново</string>
+    <string name="buttonRestart">Продолжить</string>
     <string name="win">Победа!</string>
 </resources>
