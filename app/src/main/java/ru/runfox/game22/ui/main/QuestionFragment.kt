@@ -7,12 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
-import ru.runfox.game22.Answer
-import ru.runfox.game22.Navigation
-import ru.runfox.game22.Quest
-import ru.runfox.game22.R
+import ru.runfox.game22.*
 import ru.runfox.game22.databinding.FragmentQuestionBinding
 
 class QuestionFragment : Fragment() {
@@ -56,12 +54,27 @@ class QuestionFragment : Fragment() {
             initButton(button = button, answer = question.answers[i])
         }
 
+        initHelpButtons(binding)
+    }
+
+    private fun initHelpButtons(binding: FragmentQuestionBinding) {
+        if (MyApplication.helpButtonFiftyUsed) {
+            binding.fiftyHelpButton.setImageResource(R.drawable.fifty_small_disable)
+        }
+
         binding.chanceHelpButton.setOnClickListener {
             Snackbar.make(
                 binding.root,
                 binding.chanceHelpButton.contentDescription,
                 Snackbar.LENGTH_LONG,
             ).show()
+        }
+
+        binding.fiftyHelpButton.setOnClickListener {
+            if (!MyApplication.helpButtonFiftyUsed) {
+                MyApplication.helpButtonFiftyUsed = true
+                binding.fiftyHelpButton.setImageResource(R.drawable.fifty_small_disable)
+            }
         }
     }
 
@@ -106,7 +119,10 @@ class QuestionFragment : Fragment() {
         button.setBackgroundResource(R.drawable.button_answer_success)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            Navigation.question(parentFragmentManager, answer.questionId)
+            Navigation.question(
+                parentFragmentManager,
+                answer.questionId
+            )
         }, 1000)
 
     }

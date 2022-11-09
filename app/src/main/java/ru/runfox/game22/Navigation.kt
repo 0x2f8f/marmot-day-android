@@ -9,17 +9,20 @@ import ru.runfox.game22.ui.main.MainFragment
 import ru.runfox.game22.ui.main.QuestionFragment
 
 object Navigation {
-    fun main(fragmentManager: FragmentManager) = replace(
-        fragmentManager = fragmentManager,
-        fragmentClass = MainFragment::class.java
-    )
+    fun main(fragmentManager: FragmentManager) {
+        MyApplication.initHelpButtons()
+        replace(
+            fragmentManager = fragmentManager,
+            fragmentClass = MainFragment::class.java
+        )
+    }
 
     fun finish(fragmentManager: FragmentManager) = replace(
         fragmentManager = fragmentManager,
         fragmentClass = FinishFragment::class.java
     )
 
-    fun question(fragmentManager: FragmentManager, questionId: Int)  = replace(
+    fun question(fragmentManager: FragmentManager, questionId: Int) = replace(
         fragmentManager = fragmentManager,
         fragmentClass = QuestionFragment::class.java,
         args = QuestionFragment.bundle(questionId = questionId)
@@ -34,7 +37,7 @@ object Navigation {
     private fun replace(
         fragmentManager: FragmentManager,
         fragmentClass: Class<out Fragment?>,
-        args: Bundle? = null
+        args: Bundle? = null,
     ) {
         fragmentManager
             .beginTransaction()
