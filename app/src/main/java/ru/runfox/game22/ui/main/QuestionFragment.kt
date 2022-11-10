@@ -45,21 +45,32 @@ class QuestionFragment : Fragment() {
         binding.textReward.text =
             "Вопрос ${question.id} на \$${String.format("%,d", question.reward)}"
 
-        listOf(
-            binding.answer1,
-            binding.answer2,
-            binding.answer3,
-            binding.answer4
-        ).forEachIndexed { i, button ->
+        val answerButtons = mapOf(
+            0 to binding.answer1,
+            1 to binding.answer2,
+            2 to binding.answer3,
+            3 to binding.answer4
+        )
+
+        answerButtons.forEach { i, button ->
             initButton(button = button, answer = question.answers[i])
         }
 
-        initHelpButtons(binding)
+        initHelpButtons(binding, answerButtons, question.answers)
     }
 
-    private fun initHelpButtons(binding: FragmentQuestionBinding) {
+    private fun initHelpButtons(binding: FragmentQuestionBinding, answerButtons: Map<Int, Button>, answers: List<Answer>) {
+        if (MyApplication.helpButtonPeopleUsed) {
+            binding.peopleHelpButton.setImageResource(R.drawable.help_people_disable)
+        }
         if (MyApplication.helpButtonFiftyUsed) {
             binding.fiftyHelpButton.setImageResource(R.drawable.fifty_small_disable)
+        }
+        if (MyApplication.helpButtonCallUsed) {
+            binding.callHelpButton.setImageResource(R.drawable.help_call_disable)
+        }
+        if (MyApplication.helpButtonChanceUsed) {
+            binding.chanceHelpButton.setImageResource(R.drawable.help_chance_disable)
         }
 
         binding.chanceHelpButton.setOnClickListener {
@@ -70,10 +81,34 @@ class QuestionFragment : Fragment() {
             ).show()
         }
 
+        binding.peopleHelpButton.setOnClickListener {
+            if (!MyApplication.helpButtonPeopleUsed) {
+                MyApplication.helpButtonPeopleUsed = true
+                binding.peopleHelpButton.setImageResource(R.drawable.help_people_disable)
+            }
+        }
+
         binding.fiftyHelpButton.setOnClickListener {
             if (!MyApplication.helpButtonFiftyUsed) {
                 MyApplication.helpButtonFiftyUsed = true
                 binding.fiftyHelpButton.setImageResource(R.drawable.fifty_small_disable)
+
+                var i = 0
+                var j = 0
+                while(i<4) {
+                    if (answers[i].questionId == null && j<2) {
+                        answerButtons[i]!!.visibility = View.GONE
+                        j++
+                    }
+                    i++
+                }
+            }
+        }
+
+        binding.callHelpButton.setOnClickListener {
+            if (!MyApplication.helpButtonCallUsed) {
+                MyApplication.helpButtonCallUsed = true
+                binding.callHelpButton.setImageResource(R.drawable.help_call_disable)
             }
         }
     }
