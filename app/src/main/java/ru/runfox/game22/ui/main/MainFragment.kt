@@ -7,10 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
-import ru.runfox.game22.Navigation
-import ru.runfox.game22.Quest
-import ru.runfox.game22.R
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import ru.runfox.game22.*
 
 class MainFragment : Fragment() {
 
@@ -32,13 +31,9 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        val mainMessage = requireView().findViewById<TextView>(R.id.gameTitle)
-//        mainMessage.text = Quest.title
-
         val buttonQuestion = requireView().findViewById<Button>(R.id.buttonStart)
         buttonQuestion.setOnClickListener {
             Navigation.question(parentFragmentManager, Quest.startQuestion)
         }
     }
-
 }

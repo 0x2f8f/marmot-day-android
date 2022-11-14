@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <RadioGroup
+        android:id="@+id/group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/vote_answer_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:text="Variant 1" />
+
+        <RadioButton
+            android:id="@+id/vote_answer_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:text="Variant 2" />
+
+        <RadioButton
+            android:id="@+id/vote_answer_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:text="Variant 3" />
+
+        <RadioButton
+            android:id="@+id/vote_answer_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:text="Variant 4" />
+    </RadioGroup>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/voting_results"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        />
+</LinearLayout>

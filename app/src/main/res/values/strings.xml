@@ -24,4 +24,9 @@
     <string name="buttonHint">Подсказка</string>
     <string name="buttonRestart">Продолжить</string>
     <string name="win">Победа!</string>
+    <string name="voitingResultTitle">Результаты голосования:</string>
+    <string name="textTimer">00:30</string>
+    <string name="timeoutDialogTitle">Время истекло</string>
+    <string name="timeoutDialogButton">Начать новую игру</string>
+    <string name="timeoutDialogCorrectAnswer">Верный ответ:\n</string>
 </resources>
