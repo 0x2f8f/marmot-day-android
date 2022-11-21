@@ -4,7 +4,7 @@ import android.app.Application
 
 class MyApplication: Application() {
     companion object {
-        const val BASE_TIMER_TIME = 45
+        const val BASE_TIMER_TIME = 59
 
         var helpButtonFiftyUsed: Boolean = false;
         var helpButtonCallUsed: Boolean = false;

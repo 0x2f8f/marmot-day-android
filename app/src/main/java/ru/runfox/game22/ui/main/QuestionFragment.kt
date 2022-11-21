@@ -222,49 +222,69 @@ class QuestionFragment : Fragment() {
     private fun processAnswer(answer: Answer, button: Button) {
         MyApplication.timerRun = false
         if (answer.questionId == null) {
-            button.setBackgroundResource(R.drawable.button_answer_wrong)
-
-            Handler(Looper.getMainLooper()).postDelayed({
-                if (!MyApplication.helpButtonChanceUsed) {
-                    MyApplication.helpButtonChanceUsed = true
-                    binding.chanceHelpButton.setImageResource(R.drawable.help_chance_disable)
-                    buttonPressed = false
-                    Snackbar.make(
-                        binding.root,
-                        "Вы ответили неверно, но вас спас спасательный круг",
-                        Snackbar.LENGTH_LONG,
-                    ).show()
-                    MyApplication.timerRun = true
-                } else {
-
-                    Navigation.fail(
-                        parentFragmentManager,
-                        answer.title,
-                        requireArguments().getInt("QUESTION_ID")
-                    )
-                }
-            }, 1000)
-
+            answerFail(answer, button)
             return
         }
 
         if (answer.questionId == -1) {
-            button.setBackgroundResource(R.drawable.button_answer_success)
-            Handler(Looper.getMainLooper()).postDelayed({
-                Navigation.finish(parentFragmentManager)
-            }, 1000)
-
+            answerFinish(button)
             return
         }
 
+        answerCorrect(answer, button, 6)
+    }
+
+    private fun answerCorrect(answer: Answer, button: Button, tick: Int) {
+        button.setBackgroundResource(
+            if (tick % 2 == 0) R.drawable.button_answer_success
+            else R.drawable.button_answer_pending
+        )
+        Handler(Looper.getMainLooper()).postDelayed({
+            if (tick <= 0) {
+                Navigation.question(parentFragmentManager, answer.questionId!!)
+            } else {
+                answerCorrect(answer, button, tick - 1)
+            }
+        }, 150)
+    }
+
+    private fun answerFinish(button: Button) {
         button.setBackgroundResource(R.drawable.button_answer_success)
+        Handler(Looper.getMainLooper()).postDelayed({
+            Navigation.finish(parentFragmentManager)
+        }, 1000)
+    }
+
+    private fun answerFail(answer: Answer, button: Button) {
+        button.setBackgroundResource(R.drawable.button_answer_wrong)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            Navigation.question(
-                parentFragmentManager,
-                answer.questionId
-            )
+            if (!MyApplication.helpButtonChanceUsed) {
+                answerHelpButtonChance()
+            } else {
+                answerGameOver(answer)
+            }
         }, 1000)
+    }
+
+    private fun answerHelpButtonChance() {
+        MyApplication.helpButtonChanceUsed = true
+        binding.chanceHelpButton.setImageResource(R.drawable.help_chance_disable)
+        buttonPressed = false
+        Snackbar.make(
+            binding.root,
+            "Вы ответили неверно, но вас спас спасательный круг",
+            Snackbar.LENGTH_LONG,
+        ).show()
+        initTimer(binding)
+    }
+
+    private fun answerGameOver(answer: Answer) {
+        Navigation.fail(
+            parentFragmentManager,
+            answer.title,
+            requireArguments().getInt("QUESTION_ID")
+        )
     }
 
     private fun timeOut(binding: FragmentQuestionBinding) {

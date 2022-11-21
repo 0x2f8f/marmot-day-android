@@ -1,8 +1,8 @@
 package ru.runfox.game22
 
 object Quest {
-    val startQuestion = 1
-    val finish = -1
+    const val startQuestion = 1
+    private const val finish = -1
     val questions: List<Question> = listOf(
         Question(
             id = 1,
